@@ -13,5 +13,5 @@ func main() {
 		return c.JSON(fiber.Map{"status": "ok", "service": "cart-service"})
 	})
 
-	log.Fatal(app.Listen(":8082"))
+	log.Fatal(app.Listen(":8085"))
 }
