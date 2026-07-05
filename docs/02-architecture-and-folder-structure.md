@@ -59,80 +59,83 @@ flowchart TB
 
 ## 2. Struktur Folder Monorepo
 
+Root project berada di `102-Project/WeBuy`, dengan seluruh service (frontend + backend) berada dalam satu repository GitHub yang sama (monorepo).
+
 ```
-ecommerce-platform/
-├── apps/
-│   └── web/                        # Frontend React (Vite)
-│       ├── src/
-│       │   ├── components/
-│       │   ├── pages/
-│       │   ├── context/             # Auth context, dsb
-│       │   ├── hooks/
-│       │   ├── services/            # axios/fetch wrapper ke tiap microservice
-│       │   ├── store/                # Zustand store (jika dipakai)
-│       │   ├── routes/
-│       │   └── App.tsx
-│       ├── index.html
-│       ├── package.json
-│       └── vite.config.ts
-│
-├── services/
-│   ├── user-service/
-│   │   ├── cmd/
-│   │   │   └── main.go
-│   │   ├── internal/
-│   │   │   ├── handler/
-│   │   │   ├── service/
-│   │   │   ├── repository/
-│   │   │   └── model/
-│   │   ├── migrations/
-│   │   ├── Dockerfile
-│   │   └── go.mod
-│   │
-│   ├── product-service/
-│   │   ├── cmd/main.go
-│   │   ├── internal/{handler,service,repository,model}/
-│   │   ├── migrations/
-│   │   ├── Dockerfile
-│   │   └── go.mod
-│   │
-│   ├── cart-service/
-│   │   ├── cmd/main.go
-│   │   ├── internal/{handler,service,repository,model}/
-│   │   ├── Dockerfile
-│   │   └── go.mod
-│   │
-│   ├── order-service/
-│   │   ├── cmd/main.go
-│   │   ├── internal/{handler,service,repository,model}/
-│   │   ├── migrations/
-│   │   ├── Dockerfile
-│   │   └── go.mod
-│   │
-│   ├── payment-service/
-│   │   ├── cmd/main.go
-│   │   ├── internal/
-│   │   │   ├── handler/
-│   │   │   ├── service/
-│   │   │   ├── repository/
-│   │   │   ├── model/
-│   │   │   └── midtrans/            # wrapper client Midtrans
-│   │   ├── migrations/
-│   │   ├── Dockerfile
-│   │   └── go.mod
-│   │
-│   └── notification-service/        # fase lanjut
-│       ├── cmd/main.go
-│       ├── internal/{handler,service}/
-│       ├── Dockerfile
-│       └── go.mod
-│
-├── docker-compose.yml               # orkestrasi semua service + database
-├── .env.example
-├── docs/
-│   ├── 01-project-requirements.md
-│   └── 02-architecture-and-folder-structure.md
-└── README.md
+102-Project/
+└── WeBuy/                               # root repository GitHub
+    ├── apps/
+    │   └── web/                        # Frontend React (Vite)
+    │       ├── src/
+    │       │   ├── components/
+    │       │   ├── pages/
+    │       │   ├── context/             # Auth context, dsb
+    │       │   ├── hooks/
+    │       │   ├── services/            # axios/fetch wrapper ke tiap microservice
+    │       │   ├── store/                # Zustand store (jika dipakai)
+    │       │   ├── routes/
+    │       │   └── App.tsx
+    │       ├── index.html
+    │       ├── package.json
+    │       └── vite.config.ts
+    │
+    ├── services/
+    │   ├── user-service/
+    │   │   ├── cmd/
+    │   │   │   └── main.go
+    │   │   ├── internal/
+    │   │   │   ├── handler/
+    │   │   │   ├── service/
+    │   │   │   ├── repository/
+    │   │   │   └── model/
+    │   │   ├── migrations/
+    │   │   ├── Dockerfile
+    │   │   └── go.mod
+    │   │
+    │   ├── product-service/
+    │   │   ├── cmd/main.go
+    │   │   ├── internal/{handler,service,repository,model}/
+    │   │   ├── migrations/
+    │   │   ├── Dockerfile
+    │   │   └── go.mod
+    │   │
+    │   ├── cart-service/
+    │   │   ├── cmd/main.go
+    │   │   ├── internal/{handler,service,repository,model}/
+    │   │   ├── Dockerfile
+    │   │   └── go.mod
+    │   │
+    │   ├── order-service/
+    │   │   ├── cmd/main.go
+    │   │   ├── internal/{handler,service,repository,model}/
+    │   │   ├── migrations/
+    │   │   ├── Dockerfile
+    │   │   └── go.mod
+    │   │
+    │   ├── payment-service/
+    │   │   ├── cmd/main.go
+    │   │   ├── internal/
+    │   │   │   ├── handler/
+    │   │   │   ├── service/
+    │   │   │   ├── repository/
+    │   │   │   ├── model/
+    │   │   │   └── midtrans/            # wrapper client Midtrans
+    │   │   ├── migrations/
+    │   │   ├── Dockerfile
+    │   │   └── go.mod
+    │   │
+    │   └── notification-service/        # fase lanjut
+    │       ├── cmd/main.go
+    │       ├── internal/{handler,service}/
+    │       ├── Dockerfile
+    │       └── go.mod
+    │
+    ├── docker-compose.yml               # orkestrasi semua service + database
+    ├── .env.example
+    ├── docs/
+    │   ├── 01-project-requirements.md
+    │   └── 02-architecture-and-folder-structure.md
+    └── README.md
 ```
 
 **Prinsip struktur:**
