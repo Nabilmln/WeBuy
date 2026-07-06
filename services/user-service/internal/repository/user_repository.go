@@ -2,7 +2,7 @@ package repository
 
 import (
 	"gorm.io/gorm"
-	"github.com/Nabilm/WeBuy/services/user-service/internal/model"
+	"github.com/Nabilmln/WeBuy/services/user-service/internal/model"
 )
 
 type UserRepository struct {

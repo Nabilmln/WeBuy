@@ -9,3 +9,5 @@ apps/web/dist/
 **/.env
 *.env.local
 .DS_Store
+
+WeBuy-BrunoAPI
