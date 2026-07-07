@@ -11,7 +11,7 @@ import (
 	"gorm.io/gorm"
 
 	"github.com/Nabilmln/WeBuy/services/user-service/internal/handler"
-	"github.com/Nabilmln/WeBuy/services/user-service/internal/model"
+	// "github.com/Nabilmln/WeBuy/services/user-service/internal/model"
 	"github.com/Nabilmln/WeBuy/services/user-service/internal/repository"
 	"github.com/Nabilmln/WeBuy/services/user-service/internal/service"
 )
@@ -28,10 +28,6 @@ func main() {
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal("failed to connect database: ", err)
-	}
-
-	if err := db.AutoMigrate(&model.User{}); err != nil {
-		log.Fatal("failed to migrate: ", err)
 	}
 
 	userRepo := repository.NewUserRepository(db)
